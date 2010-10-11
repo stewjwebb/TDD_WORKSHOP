@@ -1,0 +1,11 @@
+<h1>All People</h1>
+<ul>
+    <% @people.each do |p| %>
+        <li>
+          <%= link_to h(p.full_name), edit_person_path(p) %><br />
+          <% addr = p.addresses.first %>
+          <%= h "#{addr.street}, #{addr.city}, #{addr.state}, #{addr.zip}" if addr.present? %>
+        </li>
+    <% end %>
+</ul>
+<%= link_to "New Person", new_person_path %>

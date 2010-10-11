@@ -1,0 +1,2 @@
+use in console to log to std out:
+ActiveRecord::Base.logger = Logger.new(STDOUT)
